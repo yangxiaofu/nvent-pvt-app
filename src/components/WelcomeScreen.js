@@ -43,11 +43,11 @@ const WelcomeScreen = ({ onSelectApp }) => {
         {/* Hero Section */}
         <div className="text-center mb-16">
           <h1 className="text-5xl md:text-6xl font-bold text-white mb-6">
-            nVent <span className="text-nvent-red">PVT</span> Series
+            nVent <span className="text-nvent-red">ERICO</span> PVT Series
           </h1>
           <p className="text-xl text-gray-300 mb-8 max-w-3xl mx-auto">
-            Advanced surge protection technology that delivers unmatched reliability and performance 
-            for your renewable energy systems. Experience the difference with intelligent protection.
+            Superior 5kA lightning protection technology that delivers unmatched reliability and performance 
+            for your renewable energy systems. Experience the difference with advanced surge protection.
           </p>
           <div className="w-24 h-1 bg-nvent-red mx-auto mb-12"></div>
         </div>
@@ -85,31 +85,31 @@ const WelcomeScreen = ({ onSelectApp }) => {
         {/* Statistics Banner */}
         <div className="bg-gradient-to-r from-nvent-red to-red-600 rounded-2xl p-8">
           <h3 className="text-2xl font-bold text-white text-center mb-8">
-            Proven Performance Worldwide
+            nVent ERICO Lightning Protection Performance
           </h3>
           <div className="grid grid-cols-1 md:grid-cols-4 gap-6">
             <StatCard
-              icon={TrendingUp}
-              label="CO₂ Emissions Reduced"
-              value={APP_DATA.environmentalImpact.co2Reduced}
-              suffix=" tons"
-            />
-            <StatCard
               icon={Shield}
               label="Systems Protected"
-              value={APP_DATA.environmentalImpact.systemsProtected}
+              value={APP_DATA.globalStats.systemsProtected}
               suffix="+"
-            />
-            <StatCard
-              icon={Zap}
-              label="Energy Protected"
-              value={APP_DATA.environmentalImpact.energyProtected}
-              suffix=" MWh"
             />
             <StatCard
               icon={TrendingUp}
               label="Average Uptime"
-              value={APP_DATA.environmentalImpact.uptimeImproved}
+              value={APP_DATA.globalStats.uptimeImproved}
+              suffix="%"
+            />
+            <StatCard
+              icon={Zap}
+              label="Lightning Events"
+              value={APP_DATA.globalStats.lightningEvents}
+              suffix="+"
+            />
+            <StatCard
+              icon={TrendingUp}
+              label="Downtime Reduction"
+              value={APP_DATA.globalStats.downtimeReduced}
               suffix="%"
             />
           </div>

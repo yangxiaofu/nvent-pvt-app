@@ -6,7 +6,7 @@ export const APP_DATA = {
       mtbf: 720,
       reliability: 85
     },
-    pvt: {
+    nVent: {
       failures: 2,
       downtime: 8,
       mtbf: 4380,
@@ -14,80 +14,68 @@ export const APP_DATA = {
     }
   },
   
-  calculationDefaults: {
+  failureRateData: {
     solar: {
-      systemSize: 100,
-      ppaRate: 0.08,
-      capacityFactor: 25,
-      equipmentValue: 2.5
+      failureRate: 0.28,
+      failureRateError: 0.05,
+      equivalentInterval: "1 failure every 4-5 years",
+      dominantMode: "MOV cartridge replacement"
     },
     wind: {
-      systemSize: 50,
-      ppaRate: 0.06,
-      capacityFactor: 35,
-      equipmentValue: 4.0
+      failureRate: 0.17,
+      failureRateError: 0.02,
+      equivalentInterval: "1 failure every 6 years",
+      dominantMode: "MV arrester replacement"
     },
     storage: {
-      systemSize: 25,
-      ppaRate: 0.12,
-      capacityFactor: 15,
-      equipmentValue: 1.8
+      failureRate: 0.02,
+      failureRateError: 0,
+      equivalentInterval: "1 failure every 50 years",
+      dominantMode: "Integration/operational issues",
+      historicalRate: 0.92,
+      historicalInterval: "1 failure every 1.1 years"
     }
   },
   
-  environmentalImpact: {
-    co2Reduced: 2500000,
-    energyProtected: 150000,
-    systemsProtected: 45000,
-    uptimeImproved: 99.5
+  lightningImpact: {
+    standard: {
+      impulseRating: 2,
+      wind: 6,
+      solar: 3,
+      storage: 2,
+      total: 11
+    },
+    nVent: {
+      impulseRating: 5,
+      wind: 2.5,
+      solar: 1.5,
+      storage: 1,
+      total: 5
+    }
   },
   
   applicationTypes: {
     solar: {
       title: "Solar Power Systems",
-      description: "Protect your solar installations from power surges and ensure maximum uptime",
+      description: "Protect your solar installations from lightning surges and ensure maximum uptime with nVent ERICO 5kA protection",
       icon: "☀️"
     },
     wind: {
       title: "Wind Power Systems", 
-      description: "Safeguard wind turbines and maximize energy generation efficiency",
+      description: "Safeguard wind turbines from lightning strikes and maximize energy generation with superior 5kA surge protection",
       icon: "🌪️"
     },
     storage: {
       title: "Energy Storage Systems",
-      description: "Ensure reliable protection for battery storage and grid-tie systems",
+      description: "Ensure reliable protection for battery storage systems with advanced nVent ERICO lightning protection",
       icon: "🔋"
     }
   },
   
-  metrics: [
-    {
-      label: "Annual Failures",
-      standardValue: 12,
-      pvtValue: 2,
-      unit: "failures/year",
-      inverse: true
-    },
-    {
-      label: "Downtime Hours",
-      standardValue: 96,
-      pvtValue: 8,
-      unit: "hours/year",
-      inverse: true
-    },
-    {
-      label: "MTBF",
-      standardValue: 720,
-      pvtValue: 4380,
-      unit: "hours",
-      inverse: false
-    },
-    {
-      label: "System Reliability",
-      standardValue: 85,
-      pvtValue: 99,
-      unit: "%",
-      inverse: false
-    }
-  ]
+  globalStats: {
+    systemsProtected: 45000,
+    uptimeImproved: 99.5,
+    lightningEvents: 25000000,
+    downtimeReduced: 55
+  }
 };

@@ -1,9 +1,8 @@
 import React, { useState } from 'react';
-import { Menu, X, Home, BarChart, Calculator, Leaf } from 'lucide-react';
+import { Menu, X, Home, BarChart, Calculator } from 'lucide-react';
 import WelcomeScreen from './components/WelcomeScreen';
 import PerformanceScreen from './components/PerformanceScreen';
-import ROICalculatorScreen from './components/ROICalculatorScreen';
-import EnvironmentalScreen from './components/EnvironmentalScreen';
+import FailureCalculatorScreen from './components/FailureCalculatorScreen';
 
 function App() {
   const [screen, setScreen] = useState('welcome');
@@ -38,10 +37,8 @@ function App() {
         return <WelcomeScreen onSelectApp={handleSelectApp} />;
       case 'performance':
         return <PerformanceScreen appType={appType} />;
-      case 'roi':
-        return <ROICalculatorScreen appType={appType} />;
-      case 'environmental':
-        return <EnvironmentalScreen />;
+      case 'calculator':
+        return <FailureCalculatorScreen appType={appType} />;
       default:
         return <WelcomeScreen onSelectApp={handleSelectApp} />;
     }
@@ -57,7 +54,7 @@ function App() {
               <div className="w-8 h-8 bg-nvent-red rounded-full flex items-center justify-center">
                 <span className="text-white font-bold text-sm">nV</span>
               </div>
-              <h1 className="text-xl font-bold text-gray-800">nVent PVT Series</h1>
+              <h1 className="text-xl font-bold text-gray-800">nVent ERICO PVT Series</h1>
             </div>
             <button
               onClick={() => setPresentationMode(true)}
@@ -86,15 +83,9 @@ function App() {
               disabled={!appType}
             />
             <NavButton
-              screenName="roi"
+              screenName="calculator"
               icon={Calculator}
-              label="ROI Calculator"
-              disabled={!appType}
-            />
-            <NavButton
-              screenName="environmental"
-              icon={Leaf}
-              label="Environmental"
+              label="Failure Calculator"
               disabled={!appType}
             />
           </nav>
